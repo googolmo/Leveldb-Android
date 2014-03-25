@@ -1,4 +1,4 @@
 Leveldb-Android
 ===============
 
-Port leveldb to Android Application
+Port leveldb to Android
