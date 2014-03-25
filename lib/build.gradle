@@ -26,5 +26,16 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
+// query for all (non-test) variants and inject a new step in the builds
+android.libraryVariants.all { variant ->
+    def jarTask = project.tasks.create(name:"jar${variant.name.capitalize()}", type: Jar) {
+        from            variant.javaCompile.destinationDir
+        exclude         "**/R.class"
+        exclude          "**/BuildConfig.class"
+    }
+    jarTask.dependsOn variant.javaCompile
+    artifacts.add('archives', jarTask);
+}}
+
 apply from: 'https://raw.github.com/googolmo/gradle-mvn-push/master/gradle-mvn-push.gradle'
 
