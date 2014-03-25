@@ -8,7 +8,7 @@ android {
         minSdkVersion 8
         targetSdkVersion 19
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
         ndk {
             moduleName "leveldbjni"
         }
@@ -25,4 +25,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+apply from: 'https://raw.github.com/googolmo/gradle-mvn-push/master/gradle-mvn-push.gradle'
 
