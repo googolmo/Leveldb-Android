@@ -1,4 +1,9 @@
-##LevelDB Android Port
+Leveldb-Android
+===============
+
+Port leveldb to Android
+
+======================
 
 ###Build
 1. Configure Project
