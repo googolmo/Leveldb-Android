@@ -1,5 +1,7 @@
 apply plugin: 'android'
 
+group = project.GROUP
+
 android {
     compileSdkVersion 19
     buildToolsVersion "19.0.3"
@@ -7,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 14
         targetSdkVersion 19
-        versionCode 1
-        versionName "1.0"
+        versionCode Integer.parseInt(project.VERSION_CODE)
+        versionName project.VERSION_NAME
     }
     buildTypes {
         release {
