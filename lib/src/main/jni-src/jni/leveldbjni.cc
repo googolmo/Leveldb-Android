@@ -30,7 +30,6 @@ void releaseDB() {
 
 int JNI_OnLoad(JavaVM* vm, void *reserved) {
     JNIEnv* env = NULL;
-    LOGI("jni_load");
     if (vm->GetEnv(reinterpret_cast<void**>(&env), JNI_VERSION_1_6) != JNI_OK) {
         return -1;
     }
@@ -51,7 +50,6 @@ void JNI_OnUnload(JavaVM* vm, void* reserved) {
 
 void nativeOpen(JNIEnv* env, jclass clazz, jstring dbpath) {
     const char *path = env->GetStringUTFChars(dbpath, 0);
-    LOGI("Opening database %s", path);
 
     if (isDBOpen) {
         if (NULL != dbPath && 0 != strcmp(dbPath, path)) {
@@ -86,7 +84,6 @@ void nativeOpen(JNIEnv* env, jclass clazz, jstring dbpath) {
 }
 
 void nativeClose(JNIEnv* env, jclass clazz) {
-    LOGI("Closing database %s", dbPath);
     if (isDBOpen) {
         releaseDB();
     } else {
@@ -571,7 +568,6 @@ static JNINativeMethod sMethods[] = {
 
 int register_im_amomo_leveldb_LevelDB(JNIEnv *env) {
     jclass clazz = env->FindClass("im/amomo/leveldb/LevelDB");
-    LOGI("register_im_amomo_leveldb_LevelDB");
     if (!clazz) {
         LOGE("Can't find class im.amomo.leveldb.LevelDB");
         return 0;

@@ -79,19 +79,19 @@ public class MainActivity extends Activity {
             super.onViewCreated(view, savedInstanceState);
             mTv = (TextView) view.findViewById(R.id.hello);
             LevelDB db = DBFactory.open(getActivity(), "hobbits1");
-            long start = SystemClock.elapsedRealtime();
+            long start = System.currentTimeMillis();
             String value = null;
             if (db.exists(DB_KEY)) {
                 value = db.getString(DB_KEY);
             }
-            long end = SystemClock.elapsedRealtime();
             if (value == null) {
                 db.put(DB_KEY, "test_123");
             } else {
                 mTv.setText(value);
             }
             db.close();
-            Log.d(MainActivity.class.getName(), "耗时" + (end - start));
+            long end = System.currentTimeMillis();
+            Log.d(MainActivity.class.getName(), "total=" + (end - start));
         }
 
 
