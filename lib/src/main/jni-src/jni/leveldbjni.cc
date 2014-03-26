@@ -1,7 +1,8 @@
 #include "leveldbjni.h"
 #include <string.h>
-#include <stdio.h>
+#include <iomanip>
 #include <stdlib.h>
+#include <sstream>
 
 int register_im_amomo_leveldb_LevelDB(JNIEnv *env);
 
@@ -274,7 +275,10 @@ void nativePutDouble(JNIEnv* env, jclass clazz, jstring jkey, jdouble jval) {
     }
 
     const char* key = env->GetStringUTFChars(jkey, 0);
-    leveldb::Slice value = leveldb::Slice ((char*)& jval, sizeof(jdouble));
+
+    std::ostringstream oss;
+    oss << std::setprecision(17) << jval;
+    std::string value = oss.str();
 
     leveldb::Status status = db->Put(leveldb::WriteOptions(), key, value);
 
@@ -295,7 +299,10 @@ void nativePutFloat(JNIEnv* env, jclass clazz, jstring jkey, jfloat jval) {
     }
 
     const char* key = env->GetStringUTFChars(jkey, 0);
-    leveldb::Slice value = leveldb::Slice ((char*)& jval, sizeof(jfloat));
+
+    std::ostringstream oss;
+    oss << std::setprecision(16) << jval;
+    std::string value = oss.str();
 
     leveldb::Status status = db->Put(leveldb::WriteOptions(), key, value);
 

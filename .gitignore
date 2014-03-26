@@ -5,3 +5,4 @@
 *.iml
 .idea
 lib/src/main/jni-src/obj/
+lib/src/main/jni-src/libs/

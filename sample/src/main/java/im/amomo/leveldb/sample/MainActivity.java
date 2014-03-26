@@ -82,10 +82,10 @@ public class MainActivity extends Activity {
             long start = System.currentTimeMillis();
             String value = null;
             if (db.exists(DB_KEY)) {
-                value = db.getString(DB_KEY);
+                value = String.valueOf(db.getLong(DB_KEY));
             }
             if (value == null) {
-                db.put(DB_KEY, "test_123");
+                db.put(DB_KEY, 123l);
             } else {
                 mTv.setText(value);
             }
