@@ -29,7 +29,7 @@ Port leveldb to Android
 
 ```groovy
 dependencies {
-    compile 'im.amomo.leveldb:leveldb:1.0.0-SNAPSHOT@aar'
+    compile 'im.amomo.leveldb:leveldb:1.0.0@aar'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    compile 'im.amomo.leveldb:leveldb:1.0.0-SNAPSHOT@jar'
+    compile 'im.amomo.leveldb:leveldb:1.0.0@jar'
 }
 ```
 
@@ -46,7 +46,7 @@ save [armeabi-v7a/libleveldbjni.so](https://raw.githubusercontent.com/googolmo/L
 
 * local jar and local so
 
-save [jar](https://drone.io/github.com/googolmo/Leveldb-Android/files/lib/build/libs/lib-1.0.0-SNAPSHOT.jar) to libs/
+save [jar](https://drone.io/github.com/googolmo/Leveldb-Android/files/lib/build/libs/lib-1.0.0.jar) to libs/
 
 ### Usage (TODO)
 
