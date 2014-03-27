@@ -46,7 +46,7 @@ save [armeabi-v7a/libleveldbjni.so](https://raw.githubusercontent.com/googolmo/L
 
 * local jar and local so
 
-save [jar]() to libs/
+save [jar](https://drone.io/github.com/googolmo/Leveldb-Android/files/lib/build/libs/lib-1.0.0-SNAPSHOT.jar) to libs/
 
 ### Usage (TODO)
 
