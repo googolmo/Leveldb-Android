@@ -29,7 +29,7 @@ Port leveldb to Android
 
 ```groovy
 dependencies {
-    compile 'im.amomo.leveldb:leveldb:1.0.0@aar'
+    compile 'im.amomo.leveldb:leveldb:1.0.1@aar'
 }
 ```
 
@@ -37,7 +37,7 @@ dependencies {
 
 ```groovy
 dependencies {
-    compile 'im.amomo.leveldb:leveldb:1.0.0@jar'
+    compile 'im.amomo.leveldb:leveldb:1.0.1@jar'
 }
 ```
 
