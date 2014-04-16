@@ -109,14 +109,20 @@ public class LevelDB {
         if (TextUtils.isEmpty(key)) {
             throw new NullPointerException("key can not be null");
         }
-        return nativeGet(key);
+        if (nativeExists(key)) {
+            return nativeGet(key);
+        }
+        return null;
     }
 
     public String getString(String key) throws LevelDBException {
         if (TextUtils.isEmpty(key)) {
             throw new NullPointerException("key can not be null");
         }
-        return nativeGetString(key);
+        if (nativeExists(key)) {
+            return nativeGetString(key);
+        }
+        return null;
     }
 
     public long getLong(String key) throws LevelDBException {
@@ -160,7 +166,6 @@ public class LevelDB {
         }
         return nativeGetBoolean(key);
     }
-
 
     public void delete(String key) throws LevelDBException {
         if (TextUtils.isEmpty(key)) {
